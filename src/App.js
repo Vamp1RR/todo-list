@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToDo from './ToDo'
 import ToDoForm from './form'
-import { clear } from '@testing-library/user-event/dist/clear'
 
 function App() {
   const [todos, setTodos] = useState(JSON.parse(localStorage.getItem('storage')) || [])
-
+useEffect(() => {
+  localStorage.setItem('storage', JSON.stringify(todos))
+})
   const addTask = (userInput) => {
     
     if(userInput) {
@@ -14,13 +15,16 @@ function App() {
         task: userInput,
         complete: false
       }
+      
       setTodos([...todos, newItem])
     }
-    localStorage.setItem('storage', JSON.stringify(todos))
+    
+    
+    
   }
   const handleClear = () => {
     localStorage.clear('storage')
-    setTodos([clear])
+    setTodos([])
   };
   const handleFilter = () => {
     let filtered = todos.filter((task) => {
