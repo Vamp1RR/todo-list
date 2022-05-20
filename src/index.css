@@ -1,24 +1,98 @@
-body {
-  margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: 'Roboto', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../public/todolist_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
+
+code {}
 
 .todo {
   cursor: pointer;
 }
+
 .strike {
   text-decoration: line-through;
 }
+
 .App {
   text-align: center;
-  background-color: rgb(158, 216, 182);
+
+}
+
+.input {
+  padding: 7px 15px;
+  outline: none;
+  border-radius: 7px;
+  height: 30px;
+  border: 2px solid rebeccapurple;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.4s;
+  
+
+}
+.input::placeholder{
+  color: lightgreen;
+
+}
+.input:focus{
+  
+  color: aliceblue;
+  background: rgb(136,96,208);
+background: linear-gradient(90deg, rgba(136,96,208,1) 0%, rgba(90,185,234,1) 100%);
+transition: 0.4s;
+
+}
+
+.container {
+  max-width: 1480px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.header {
+  text-transform: uppercase;
+  font-weight: 300;
+  color: white;
+}
+.btn{
+  margin: 10px;
+  outline: none;
+  border-radius: 7px;
+  border: 2px solid rebeccapurple;
+  font-size: 20px;
+  transition: 0.2s;
+  height: 47px;
+}
+.btn:hover{
+  transform: scale(1.2);
+  background-color: rebeccapurple;
+  color: aliceblue;
+}
+.task-btn{
+  
+}
+.task-todo{
+  max-width: fit-content;
+  margin: 0 auto;
+  letter-spacing: 2px;
+}
+.task-text{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin: 5px;
+}
+.task-container {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  max-width: fit-content;
+  margin: 0 auto;
 }

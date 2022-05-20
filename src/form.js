@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './index.css';
 
 
 function ToDoForm({ addTask }) {
@@ -23,13 +24,14 @@ function ToDoForm({ addTask }) {
     return (
         <form onSubmit={handleSubmit}>
             <input 
+                className='input'
                 value={userInput}
                 type="text"
                 onChange={handleChange}
                 onKeyDown={handleKeyPress}
                 placeholder="Enter task..."
             />        
-            <button>Submit</button>
+            <button className='btn'>Submit</button>
         </form>
     )
 }
